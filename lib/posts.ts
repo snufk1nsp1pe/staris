@@ -66,6 +66,7 @@ export function getPostBySlug(slug: string) {
 //     })
 // }
 
+//replaced
 export function getAllPosts() {
   const filenames = fs.readdirSync(postsDir);
   
