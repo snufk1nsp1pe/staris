@@ -1,9 +1,22 @@
 import React from 'react'
-
+import Link from 'next/link'
+import { getAllPosts } from '../../lib/posts'
 function page() {
+  const posts = getAllPosts()
   return (
     <div className='font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20'>
-      <main className='flex flex-col gap-[32px] row-start-2 items-center sm:items-start'><p>notes</p></main>
+      <main className='flex flex-col gap-[32px] row-start-2 items-center sm:items-start'>
+        <p>notes</p>
+        <ul>
+          {posts.map((post) => (
+            <li key={post.slug}>
+              <Link href={`/notebook/${post.slug}`}>
+                {post.title} - {post.date}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </main>
     </div>
   )
 }

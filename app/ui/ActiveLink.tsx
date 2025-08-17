@@ -1,11 +1,11 @@
 'use client' // This must be a client component
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ActiveLinkProps } from '../lib/types'
+import { ActiveLinkProps } from '../../lib/types'
 export function ActiveLink({ href, children, tab }: ActiveLinkProps) {
   const pathname = usePathname()
   const isActive = href === '/' ? pathname === href : pathname.startsWith(href)
-  
+
   const baseClass =
     'font-mono px-6 py-2 bg-slate-900/0 rounded-lg font-bold transform transition duration-400'
   const homeClass = isActive
@@ -22,7 +22,13 @@ export function ActiveLink({ href, children, tab }: ActiveLinkProps) {
   return (
     <Link
       href={href}
-      className={tab === 'home' ? homeClass : tab === 'about' ? aboutClass :  notebookClass}>
+      className={
+        tab === 'home'
+          ? homeClass
+          : tab === 'about'
+          ? aboutClass
+          : notebookClass
+      }>
       {children}
     </Link>
   )

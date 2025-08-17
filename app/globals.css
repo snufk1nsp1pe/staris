@@ -18,7 +18,9 @@
     --foreground: #ededed;
   }
 }
-
+p{
+  text-indent: 2em;
+}
 body {
   background: #F7EFDA;
   color: var(--foreground);
