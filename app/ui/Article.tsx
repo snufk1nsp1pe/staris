@@ -8,7 +8,7 @@ export function Article({ content, frontmatter }) {
   const stickers = frontmatter.stickers
   return (
     <>
-      <article className='relative border-[#B83555] bg-[#f9e3e9] border-2 border-dashed rounded-2xl p-5 text-[#57061a] '>
+      <article className=' relative border-[#B83555] bg-[#f9e3e9] border-2 border-dashed rounded-2xl p-5 text-[#57061a] '>
         <header className='flex justify-between pb-5 gap-2'>
           <h2 className='font-semibold uppercase text-2xl'>
             {frontmatter.title}

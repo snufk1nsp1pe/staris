@@ -9,7 +9,7 @@ export default function Hero1() {
     <section className='flex flex-col items-center justify-center text-center py-28'>
       <h1 className='text-5xl font-bold tracking-tight text-gray-800'>
         The <span >WiFi</span> Made{' '}
-        <span className="text-amber-400">Me</span> Do It
+        <Link href={'/about'} className="underline decoration-amber-300">Me</Link> Do It
       </h1>
       <p className='mt-4 text-lg text-gray-500 italic'>
         Blogging: cheaper than therapy.
@@ -21,7 +21,7 @@ export default function Hero1() {
       </a> */}
       <Link
         href={'/notebook'}
-        className='bg-rose-300 p-4 [box-shadow:5px_5px_0px_#000000] mt-2'>
+        className='bg-rose-300 p-2 [box-shadow:5px_5px_0px_#000000] mt-2'>
         Read &amp; Regret
       </Link>
     </section>

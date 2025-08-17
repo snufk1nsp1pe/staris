@@ -1,4 +1,6 @@
 import { Article } from '@/app/ui/Article'
+import Box1 from '@/app/ui/Box1';
+import Box2 from '@/app/ui/Box2';
 import { getPostBySlug } from '@/lib/posts'
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
@@ -22,7 +24,8 @@ export default async function NotePage(props: Params){
           {frontmatter.boxes && (
             <div className='flex flex-col gap-5'>
               
-             
+             <Box1 frontmatter={frontmatter}/>
+             <Box2 frontmatter={frontmatter}/>
             </div>
           )}
           <div className={frontmatter.box1 ? '' : 'col-span-2'}>
