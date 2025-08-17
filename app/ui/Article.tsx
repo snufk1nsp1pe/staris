@@ -5,7 +5,7 @@ import { ArrowUpRight } from 'lucide-react'
 import { MDXComponents } from '@/lib/mdx-components'
 import Image from 'next/image'
 export function Article({ content, frontmatter }) {
-  const stickers = frontmatter.stickers || []
+  const stickers = frontmatter.stickers
   return (
     <>
       <article className='relative border-[#B83555] bg-[#f9e3e9] border-2 border-dashed rounded-2xl p-5 text-[#57061a] '>
@@ -18,18 +18,27 @@ export function Article({ content, frontmatter }) {
           </p>
         </header>
 
-        <MDXRemote source={content}  components={MDXComponents}/>
-        <div>
+        <MDXRemote source={content} components={MDXComponents} />
+        <div className='mt-8'>
           {frontmatter.tags?.map((tag, i) => (
             <span key={i} className='text-[#7a3d4f] font-semibold'>
               {`#${tag} `}
             </span>
           ))}
         </div>
-        {stickers.map((s,i)=>(
-          <Image key={i} src={s.src} alt='hm' width={s.size} height={s.size} className='absolute' style={{
-            left: `${s.x}px`, top: `${s.y}px`
-          }} />
+        {stickers && stickers.map((s, i) => (
+          <Image
+            key={i}
+            src={s.src}
+            alt='hm'
+            width={s.size}
+            height={s.size}
+            className='absolute'
+            style={{
+              left: `${s.x}px`,
+              top: `${s.y}px`,
+            }}
+          />
         ))}
         {/* {post.stickers?.map((s: any, i: number) => (
           <img
