@@ -3,8 +3,17 @@ import Link from 'next/link'
 import { getAllPosts } from '../../lib/posts'
 import MiniArticle from '../ui/MiniArticle'
 import { ArrowLeft } from 'lucide-react'
+import { colorPalette } from '@/lib/types'
 function page() {
   const posts = getAllPosts()
+  // const coloredPosts = originalPosts.map((post, i) => {
+  //   return {
+  //     ...post,
+  //     palette: colorPalette[i % colorPalette.length],
+  //   }
+  // })
+            
+
   return (
     <main className='py-25 flex flex-col gap-5 mx-auto w-[1000px]'>
       <div className='flex gap-5'>

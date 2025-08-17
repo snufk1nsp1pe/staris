@@ -3,11 +3,11 @@ import React from 'react'
 import { getPostBySlug } from '@/lib/posts'
 import { Article } from '../ui/Article'
 function page() {
-  const {content, frontmatter} = getPostBySlug('me')
+  const {content, frontmatter, palette} = getPostBySlug('me')
   return (
     <div className='font-sans grid grid-rows-[20px_1fr_20px] grid-cols-[200px_1fr_200px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20'>
       <main className='flex flex-col gap-[32px] row-start-2 col-start-2 items-center sm:items-start'>
-        <Article content={content} frontmatter={frontmatter}/>
+        <Article content={content} frontmatter={frontmatter} palette={palette}/>
         {/* <article className=' border-[#B83555] bg-[#f9e3e9] border-2 border-dashed rounded-2xl p-5 text-[#57061a] '>
           <header className='flex justify-between pb-5 gap-2'>
             <h2 className='font-semibold uppercase text-2xl'>$whoami</h2>
