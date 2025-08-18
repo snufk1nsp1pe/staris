@@ -27,7 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/mdx-page/[slug]"
+    "app/mdx-page/[slu]"
   ],
   "exclude": ["node_modules"]
 }

@@ -1,4 +1,3 @@
-import { ArrowUpRight } from 'lucide-react'
 import React from 'react'
 import { getPostBySlug } from '@/lib/posts'
 import { Article } from '../ui/Article'

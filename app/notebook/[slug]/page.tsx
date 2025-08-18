@@ -4,15 +4,10 @@ import Box2 from '@/app/ui/Box2'
 import { getPostBySlug } from '@/lib/posts'
 import { notFound } from 'next/navigation'
 
-type PageProps = {
-  params: {
-    slug: string
-  }
-}
 
-export default async function NotePage(props: PageProps) {
-  const params = await props.params
-  const { content, frontmatter, palette } = await getPostBySlug(params.slug)
+export default async function NotePage({params}:  {params: Promise<{ slug: string }>}
+) {
+  const { content, frontmatter, palette } = await getPostBySlug((await params).slug)
 
   if (!content) {
     return notFound()
