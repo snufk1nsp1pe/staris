@@ -2,10 +2,15 @@ import { Article } from '@/app/ui/Article'
 import Box1 from '@/app/ui/Box1'
 import Box2 from '@/app/ui/Box2'
 import { getPostBySlug } from '@/lib/posts'
-import { ArrowLeft } from 'lucide-react'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
-export default async function NotePage(props: Params) {
+
+type PageProps = {
+  params: {
+    slug: string
+  }
+}
+
+export default async function NotePage(props: PageProps) {
   const params = await props.params
   const { content, frontmatter, palette } = await getPostBySlug(params.slug)
 

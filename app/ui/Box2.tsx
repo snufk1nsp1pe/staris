@@ -1,6 +1,7 @@
+import { Frontmatter } from '@/lib/types'
 import { ArrowUpRight } from 'lucide-react'
 
-export default function Box1({ frontmatter }) {
+export default function Box1({ frontmatter }: {frontmatter: Frontmatter}) {
   return (
     <>
       <div className='bg-rose-300 p-4 [box-shadow:5px_5px_0px_#000000] text-black'>

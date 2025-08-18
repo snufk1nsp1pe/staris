@@ -1,9 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { colorPalette } from './types';
-import { Palette } from 'lucide-react';
-import { Post } from './types';
+import { colorPalette, Frontmatter, Post } from './types';
 const postsDir = path.join(process.cwd(), "posts");
 
 
@@ -20,7 +18,7 @@ export function getPostBySlug(slug: string) {
   const { data, content } = matter(fileContents);
 
   const index = filenames.findIndex((f)=>f.replace(/\.mdx?$/,"")===realSlug)
-  return { slug: realSlug, content, frontmatter: data, palette: colorPalette[index % colorPalette.length] };
+  return { slug: realSlug, content, frontmatter: data as Frontmatter, palette: colorPalette[index % colorPalette.length] };
 }
 
 // export function getAllPosts(){
@@ -64,4 +62,3 @@ export function getAllPosts(): Post[] {
 }
 
 
-// make function to get all tags by slug and store them in an array for later manipulation

@@ -1,10 +1,14 @@
 import React from 'react'
-import Link from 'next/link'
 import { getAllPosts } from '@/lib/posts'
 import MiniArticle from '@/app/ui/MiniArticle'
-import { ArrowLeft } from 'lucide-react'
-import TagDropdown from '@/app/ui/TagDropdown'
-export default async function Page({ params }) {
+
+type PageProps = {
+  params: {
+    tag: string 
+  }
+}
+
+export default async function Page({ params }: PageProps) {
   const posts = await getAllPosts()
   const tag = await params.tag
   const filteredPosts = posts.filter(post => post.tags?.includes(tag))

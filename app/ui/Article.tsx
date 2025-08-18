@@ -1,11 +1,9 @@
-// import { PortableText } from '@portabletext/react'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-// import ReactMarkdown from 'react-markdown'
-// import { ArrowUpRight } from 'lucide-react'
 import { MDXComponents } from '@/lib/mdx-components'
 import Image from 'next/image'
 import Link from 'next/link'
-export function Article({ content, frontmatter, palette }) {
+import { Frontmatter, Palette } from '@/lib/types'
+export function Article({ content, frontmatter, palette }: {content: string, frontmatter: Frontmatter, palette: Palette}) {
   const { bg, text, border, meta } = palette
 
   const stickers = frontmatter.stickers

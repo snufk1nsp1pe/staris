@@ -59,3 +59,39 @@ export type Post = {
   };
   featured?: string;
 };
+
+export type Palette={
+  border: string;
+  bg: string;
+  text: string;
+  meta: string;
+}
+ export type Frontmatter={
+  title: string;
+  date: string;
+  tags: string[];
+  tagline: string;
+  // Optional properties for layouts
+  featured?: boolean;
+  // Optional properties for boxes
+  boxes?: boolean;
+  box1: string;
+  box1Heading: string[];
+  box1Content: string[];
+  box2: string;
+  box2Heading: string[];
+  box2Content: string[];
+  stickers?: Sticker[]
+ }
+
+ export type Sticker = {
+  src: string;
+  x: number;
+  y: number;
+  size: number;
+};
+export type ActiveLinkProps = {
+  href: string;
+  children: React.ReactNode;
+  tab?: string; 
+};

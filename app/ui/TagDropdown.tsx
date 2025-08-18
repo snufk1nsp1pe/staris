@@ -1,4 +1,3 @@
-// app/ui/TagDropdown.jsx
 'use client'
 
 import { useState } from 'react'
@@ -10,7 +9,7 @@ export default function TagDropdown({ allTags }: { allTags: Array<string> }) {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
   const currentTag = pathname.startsWith('/notebook/tags/')
-    ? decodeURIComponent(pathname.split('/').pop()) // Get the last part of the URL
+    ? decodeURIComponent(pathname.split('/').pop() || 'all') 
     : 'all'
   return (
     <div className='relative inline-block text-left'>
