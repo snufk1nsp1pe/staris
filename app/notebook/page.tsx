@@ -3,35 +3,19 @@ import Link from 'next/link'
 import { getAllPosts } from '../../lib/posts'
 import MiniArticle from '../ui/MiniArticle'
 import { ArrowLeft } from 'lucide-react'
-import { colorPalette } from '@/lib/types'
-function page() {
+import TagDropdown from '../ui/TagDropdown'
+function page({params}) {
   const posts = getAllPosts()
-  // const coloredPosts = originalPosts.map((post, i) => {
-  //   return {
-  //     ...post,
-  //     palette: colorPalette[i % colorPalette.length],
-  //   }
-  // })
-            
-
+   
+const tag = params.tag
   return (
-    <main className='py-25 flex flex-col gap-5 mx-auto w-[1000px]'>
-      <div className='flex gap-5'>
-        <Link
-          href='/'
-          className='inline-flex items-center text-[#56768D] font-bold'>
-          <ArrowLeft className='w-5 h-5 mr-2' />
-          Back
-        </Link>
-        {/* gonna be a drop down menu */}
-        <span>tags</span>
-      </div>
+
       <div className='columns-2 gap-5'>
         {posts.map((post) => (
           <MiniArticle post={post} key={post.slug} />
         ))}
       </div>
-    </main>
+    
   )
 }
 

@@ -3,7 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { colorPalette } from './types';
 import { Palette } from 'lucide-react';
-
+import { Post } from './types';
 const postsDir = path.join(process.cwd(), "posts");
 
 
@@ -45,7 +45,7 @@ export function getPostBySlug(slug: string) {
 // }
 
 //replaced
-export function getAllPosts() {
+export function getAllPosts(): Post[] {
   const filenames = fs.readdirSync(postsDir);
  
   return filenames.map((filename, i) => { 
@@ -58,7 +58,7 @@ export function getAllPosts() {
       slug,
       ...data,
       palette: colorPalette[i%colorPalette.length]
-    };
+    } as Post;
   });
 
 }

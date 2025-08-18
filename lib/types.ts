@@ -43,17 +43,18 @@ export type Author = {
     },
   ]
 
-// export type Post = {
-//   slug: string;
-//   title: string;
-//   date: string;
-//   author: Author;
-//   content: string;
-//   preview?: boolean;
-// };
-
-// export type ActiveLinkProps = {
-//   href: string;
-//   children: ReactNode;
-//   tab: string;
-// };
+export type Post = {
+  slug: string;
+  title?: string;
+  date?: string;
+  tagline?: string;
+  tags?: string[];
+  colSpan?: string;
+  rowSpan?: string;
+  palette: {
+    bg: string;
+    border: string;
+    text: string;
+    meta: string;
+  };
+};

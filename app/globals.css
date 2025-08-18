@@ -18,9 +18,33 @@
     --foreground: #ededed;
   }
 }
+
+.custom-scrollbar {
+  overflow-y: auto;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+
+}
+
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #c0c0c000;
+}
+
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #6F5D4F;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
 p{
   text-indent: 2em;
 }
+
 body {
   background: #F7EFDA;
   color: var(--foreground);
