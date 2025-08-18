@@ -13,7 +13,7 @@ export default async function Page({ params }: { params: Promise<{ tag: string }
   const tag = await (await params).tag
   const filteredPosts = posts.filter((post) => post.tags?.includes(tag))
   return (
-    <div className='columns-2 gap-5'>
+    <div className='md:columns-2 md:gap-5 px-5'>
       {filteredPosts.map((post) => (
         <MiniArticle post={post} key={post.slug} />
       ))}

@@ -1,6 +1,5 @@
 import React from 'react'
 import { getAllPosts } from '../lib/posts'
-import Hero1 from './ui/Hero1'
 import FeaturedPosts from './ui/FeaturedPosts'
 import Me from './ui/Me'
 
@@ -9,13 +8,14 @@ export default async function Home() {
 
   return (
     <>
-      <main className='py-25 flex flex-col gap-5 mx-auto w-[1000px]'>
-        <div className='my-30'>
+      <main className='px-5 md:mb-30 md:mt-50 mt-30 flex flex-col md:gap-3 md:mx-auto md:w-[1000px]'>
+        <div className='md:mb-30 mb-14'>
           <Me/>
         </div>
-        <div>
+        <div className='md:mb-30 mb-10'>
           <FeaturedPosts posts={posts} />
         </div>
+        <div>hi</div>
       </main>
     </>
   )

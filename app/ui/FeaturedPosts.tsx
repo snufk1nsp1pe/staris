@@ -1,16 +1,30 @@
 import { Post } from '@/lib/types'
 import MiniArticle from './MiniArticle'
+import Link from 'next/link'
 
 export default function FeaturedPosts({ posts }: { posts: Post[] }) {
   return (
     <>
-      <h2 className='capitalize text-3xl font-bold tracking-tight text-gray-800 mb-5'>
-        articles carefully picked for you (not really)
-      </h2>
-      <div className='columns-2 gap-5'>
+      <div className='flex justify-between items-center'>
+        {' '}
+        <h2 className='capitalize md:text-3xl text-xl font-bold tracking-tight text-gray-800 mb-5'>
+          picked for you (not really)
+        </h2>
+        <Link
+          href={'/notebook'}
+          className='md:text-gray-600 md:underline md:decoration-4 md:underline-offset-2 md:decoration-rose-300 md:text-md hidden md:block'>
+          read more
+        </Link>
+      </div>
+      <div className='md:columns-2 md:gap-5'>
         {posts.map(
           (post) => post.featured && <MiniArticle key={post.slug} post={post} />
         )}
+        <Link
+          href={'/notebook'}
+          className='text-gray-600 underline decoration-4 underline-offset-2 decoration-rose-300 text-sm  md:hidden '>
+          read more
+        </Link>
       </div>
     </>
   )

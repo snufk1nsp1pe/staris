@@ -5,13 +5,11 @@ function page() {
   const posts = getAllPosts()
    
   return (
-
-      <div className='columns-2 gap-5'>
-        {posts.map((post) => (
-          <MiniArticle post={post} key={post.slug} />
-        ))}
-      </div>
-    
+    <div className='md:columns-2 md:gap-5 px-5'>
+      {posts.map((post) => (
+        <MiniArticle post={post} key={post.slug} />
+      ))}
+    </div>
   )
 }
 

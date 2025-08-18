@@ -31,14 +31,14 @@ export default function TagDropdown({ allTags }: { allTags: Array<string> }) {
       </div>
 
       {isOpen && (
-        <div className='absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-2xl bg-white border-dashed border-2 border-[#6F5D4F] focus:outline-none'>
-          <div className='py-1 max-h-60 overflow-y-auto custom-scrollbar focus:outline-none'>
+        <div className='absolute right-0 z-10 mt-2 md:w-56 origin-top-right rounded-2xl bg-white border-dashed border-2 border-[#6F5D4F] focus:outline-none '>
+          <div className='py-1 md:max-h-60 max-h-30 overflow-y-auto custom-scrollbar focus:outline-none '>
             <ul>
               <li>
                 <Link
                   href='/notebook'
                   onClick={() => setIsOpen(false)}
-                  className='block px-4 py-2 text-sm text-[#6F5D4F] rounded-2xl hover:font-bold'>
+                  className='block px-4 py-2 md:text-sm text-xs text-[#6F5D4F] rounded-2xl hover:font-bold'>
                   all
                 </Link>
               </li>

@@ -10,21 +10,23 @@ export function Article({ content, frontmatter, palette }: {content: string, fro
   return (
     <>
       <article
-        className={`relative ${border} ${bg} border-2 border-dashed rounded-2xl p-5 ${text} `}>
-        <header className='flex justify-between pb-5 gap-2'>
-          <h2 className='font-semibold text-2xl'>{frontmatter.title}</h2>
-          <p className={`${meta} font-light text-sm`}>
+        className={`relative ${border} ${bg} border-2 border-dashed rounded-2xl md:p-5 p-3 md:leading-loose leading-6 ${text} `}>
+        <header className='flex justify-between md:pb-5 pb-3 gap-2'>
+          <h2 className='font-semibold md:text-2xl text-xl'>
+            {frontmatter.title}
+          </h2>
+          <p className={`${meta} font-light md:text-sm text-xs`}>
             <time>{frontmatter.date}</time>
           </p>
         </header>
 
         <MDXRemote source={content} components={MDXComponents} />
-        <div className='mt-8'>
+        <div className='md:mt-8 mt-4'>
           {frontmatter.tags?.map((tag, i) => (
             <Link
               href={`/notebook/tags/${tag}`}
               key={i}
-              className={`${meta} font-semibold`}>
+              className={`${meta} font-semibold md:text-[16px] text-sm`}>
               {`#${tag} `}
             </Link>
           ))}
@@ -37,7 +39,7 @@ export function Article({ content, frontmatter, palette }: {content: string, fro
               alt='hm'
               width={s.size}
               height={s.size}
-              className='absolute'
+              className='md:absolute'
               style={{
                 left: `${s.x}px`,
                 top: `${s.y}px`,

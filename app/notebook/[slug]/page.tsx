@@ -12,17 +12,17 @@ export default async function NotePage({params}:  {params: Promise<{ slug: strin
   if (!content) {
     return notFound()
   }
-
+  
   return (
  
-      <div className='mt-6 grid grid-cols-[300px_1fr] gap-5'>
+      <div className='md:mt-6 md:grid md:grid-cols-[300px_1fr] gap-5 flex flex-col-reverse mx-5'>
         {frontmatter.boxes && (
           <div className='flex flex-col gap-5'>
             <Box1 frontmatter={frontmatter} />
             <Box2 frontmatter={frontmatter} />
           </div>
         )}
-        <div className={frontmatter.box1 ? '' : 'col-span-2'}>
+        <div className={frontmatter.box1 ? '' : 'md:col-span-2'}>
           <Article content={content} frontmatter={frontmatter} palette={palette}/>
         </div>
       </div>

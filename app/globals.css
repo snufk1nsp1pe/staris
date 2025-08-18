@@ -28,6 +28,9 @@
 
 }
 
+::selection{
+  background-color: #e3c9f6;
+}
 
 .custom-scrollbar::-webkit-scrollbar-track {
   background: #c0c0c000;
