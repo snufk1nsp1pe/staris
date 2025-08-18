@@ -28,7 +28,7 @@ export default async function Home() {
           <Hero1 />
         </div>
         <div>
-          <FeaturedPosts />
+          <FeaturedPosts posts={posts} />
         </div>
         {/* {posts.map((post: any) => (
             <HomeArticle key={post.slug} post={post} />

@@ -57,4 +57,5 @@ export type Post = {
     text: string;
     meta: string;
   };
+  featured?: string;
 };

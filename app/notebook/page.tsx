@@ -21,13 +21,4 @@ const tag = params.tag
 
 export default page
 
-//  <p>notes</p>
-//         <ul>
-//           {posts.map((post) => (
-//             <li key={post.slug}>
-//               <Link href={`/notebook/${post.slug}`}>
-//                 {post.title} - {post.date}
-//               </Link>
-//             </li>
-//           ))}
-//         </ul>
+

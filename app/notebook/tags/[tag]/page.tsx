@@ -4,9 +4,9 @@ import { getAllPosts } from '@/lib/posts'
 import MiniArticle from '@/app/ui/MiniArticle'
 import { ArrowLeft } from 'lucide-react'
 import TagDropdown from '@/app/ui/TagDropdown'
-export default function Page({ params }) {
-  const posts = getAllPosts()
-  const tag = params.tag
+export default async function Page({ params }) {
+  const posts = await getAllPosts()
+  const tag = await params.tag
   const filteredPosts = posts.filter(post => post.tags?.includes(tag))
   return (
  
