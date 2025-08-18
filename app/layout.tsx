@@ -27,11 +27,10 @@ export default function RootLayout({
     <>
       {' '}
       <NavBar />
-      <html lang='en' className="custom-scrollbar">
-        <body
-          className={` antialiased`}>
-          {children}
-        </body>
+      <html
+        lang='en'
+        className='custom-scrollbar before:absolute before:top-0 before:bottom-0 md:before:left-14 before:left-4 before:h-auto before:w-[2px] before:bg-rose-300'>
+        <body className={` antialiased`}>{children}</body>
       </html>
     </>
   )

@@ -4,8 +4,7 @@ export default function Me() {
   return (
     <section className='flex flex-col items-center justify-center text-center '>
       <h1 className='md:text-5xl text-3xl font-bold tracking-tight text-gray-800'>
-        hello{' '}
-there        , this is{'  '}
+        hello there, this is{'  '}
         <Link
           href={'/notebook/me'}
           className='bg-[linear-gradient(-3deg,transparent_26%,theme(colors.amber.300)_26%,theme(colors.amber.300)_70%,transparent_70%)]'>
@@ -17,7 +16,7 @@ there        , this is{'  '}
         i do computers, movies,{' '}
         <Link
           href={'/jukebox'}
-          className='underline decoration-rose-300 underline-offset-2 decoration-4'>
+          className='underline decoration-rose-300 underline-offset-2 decoration-4 '>
           music
         </Link>
         , books &{' '}

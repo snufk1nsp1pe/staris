@@ -7,8 +7,8 @@ export default function FeaturedPosts({ posts }: { posts: Post[] }) {
     <>
       <div className='flex justify-between items-center'>
         {' '}
-        <h2 className='capitalize md:text-3xl text-xl font-bold tracking-tight text-gray-800 mb-5'>
-          picked for you (not really)
+        <h2 className='capitalize md:text-3xl text-xl font-bold tracking-tight text-gray-800 mb-5 decoration-wavy underline underline-offset-5'>
+          picked for you (you lazy)
         </h2>
         <Link
           href={'/notebook'}
