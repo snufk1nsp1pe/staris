@@ -1,9 +1,5 @@
 import Link from "next/link";
 
-
-
-
-
 export default function Hero1() {
   return (
     <section className='flex flex-col items-center justify-center text-center py-28'>
