@@ -29,7 +29,9 @@
 }
 
 ::selection{
-  background-color: #e3c9f6;
+background: #ffd966;
+  /* highlighter yellow */
+  color: black;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
@@ -50,10 +52,49 @@ p{
 
 body {
   background: #F7EFDA;
-  color: var(--foreground);
+  /* color: var(--foreground); */
   font-family: monospace,
     Arial,
     Helvetica,
     sans-serif  ;
     line-height:2;
+background-image: url("https://www.transparenttextures.com/patterns/lined-paper.png");  
+  }
+/* background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+background-image: url("https://www.transparenttextures.com/patterns/groovepaper.png");
+background-image: url("https://www.transparenttextures.com/patterns/notebook-dark.png"); */
+
+/* .typewriter::after {
+  content: "|";
+  animation: blink 1s infinite;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+} */
+
+@keyframes noteDrop {
+  from {
+    transform: rotate(-1deg) translateY(-10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: rotate(0deg) translateY(0);
+    opacity: 1;
+  }
+}
+
+.article {
+  animation: noteDrop 0.5s ease-out;
 }

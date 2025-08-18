@@ -4,8 +4,11 @@ export default function Me() {
   return (
     <section className='flex flex-col items-center justify-center text-center '>
       <h1 className='md:text-5xl text-3xl font-bold tracking-tight text-gray-800'>
-        hello there, this is{'  '}
-        <Link href={'/notebook/me'} className='underline decoration-amber-300'>
+        hello{' '}
+there        , this is{'  '}
+        <Link
+          href={'/notebook/me'}
+          className='bg-[linear-gradient(-3deg,transparent_26%,theme(colors.amber.300)_26%,theme(colors.amber.300)_70%,transparent_70%)]'>
           serine
         </Link>
         .

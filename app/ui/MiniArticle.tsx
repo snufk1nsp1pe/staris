@@ -6,7 +6,7 @@ export default function MiniArticle({ post }: {post: Post}) {
 
   return (
     <article
-      className={`relative ${border} ${bg} border-2 border-dashed rounded-2xl md:p-5 p-3 leading-6 ${text} ${post.colSpan} ${post.rowSpan} break-inside-avoid mb-4`}>
+      className={`article relative ${border} ${bg} border-2 border-dashed rounded-2xl md:p-5 p-3 leading-6 ${text} ${post.colSpan} ${post.rowSpan} break-inside-avoid mb-4`}>
       <header className='flex justify-between md:pb-5 pb-3 gap-2'>
         <Link href={`/notebook/${post.slug}`}>
           <h2 className='font-semibold md:text-2xl text-xl'>{post.title}</h2>
