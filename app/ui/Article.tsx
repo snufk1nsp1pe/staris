@@ -4,6 +4,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 // import { ArrowUpRight } from 'lucide-react'
 import { MDXComponents } from '@/lib/mdx-components'
 import Image from 'next/image'
+import Link from 'next/link'
 export function Article({ content, frontmatter, palette }) {
     const { bg, text, border, meta } = palette
 
@@ -23,9 +24,9 @@ export function Article({ content, frontmatter, palette }) {
         <MDXRemote source={content} components={MDXComponents} />
         <div className='mt-8'>
           {frontmatter.tags?.map((tag, i) => (
-            <span key={i} className={`${meta} font-semibold`}>
+            <Link href={`/notebook`} key={i} className={`${meta} font-semibold`}>
               {`#${tag} `}
-            </span>
+            </Link>
           ))}
         </div>
         {stickers && stickers.map((s, i) => (
