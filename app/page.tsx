@@ -8,7 +8,7 @@ export default async function Home() {
 
   return (
     <>
-      <main className='px-5 md:mb-30 md:mt-50 mt-30 flex flex-col md:gap-3 md:mx-auto md:w-[1000px]'>
+      <main className='px-5 md:mb-30 md:mt-50 mt-40 flex flex-col md:gap-3 md:mx-auto md:w-[1000px]'>
         <div className='md:mb-30 mb-14'>
           <Me/>
         </div>

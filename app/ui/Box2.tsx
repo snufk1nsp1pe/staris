@@ -4,7 +4,7 @@ import { ArrowUpRight } from 'lucide-react'
 export default function Box1({ frontmatter }: {frontmatter: Frontmatter}) {
   return (
     <>
-      <div className='bg-rose-300 p-4 [box-shadow:5px_5px_0px_#000000] text-black rotate-[2deg]'>
+      <div className='box2 relative bg-rose-300 p-4 [box-shadow:5px_5px_3px_#242424] text-black rotate-[2deg]'>
         <h3 className='uppercase font-semibold'>{frontmatter.box2}</h3>
         {/* This div will stack all our new rows vertically */}
         <div className='flex flex-col space-y-1 mt-2'>
@@ -28,6 +28,7 @@ export default function Box1({ frontmatter }: {frontmatter: Frontmatter}) {
             </div>
           ))}
         </div>
+        
       </div>
     </>
   )
