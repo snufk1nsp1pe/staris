@@ -14,13 +14,13 @@ export default function Me() {
         .
       </h1>
       <span className='md:mt-4 md:text-lg text-gray-600 leading-6 md:leading-relaxed'>
-        i do computers, movies,{' '}
+        i do computers,{' '}
         <Link
-          href={'/jukebox'}
+          href={'/filmbook'}
           className='underline decoration-rose-300 underline-offset-2 decoration-4 '>
-          music
+          movies
         </Link>
-        , books &{' '}
+        , music , books &{' '}
         <Link
           href={'/notebook'}
           className='underline decoration-rose-300 underline-offset-2 decoration-4'>
@@ -32,7 +32,6 @@ export default function Me() {
       <span className='md:mt-1 md:text-md text-sm text-gray-500 italic'>
         (also yapping, rejecting society and hating on the world)
       </span>
-     
     </section>
   )
 }

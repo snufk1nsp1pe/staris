@@ -35,7 +35,7 @@ export async function Polaroid({ review }: { review: Review }) {
             height={450}
           />
         </div>
-        <Link href={`/reviews/${review.slug}`}>
+        <Link href={`/filmbook/${review.slug}`}>
           <div className='w-full flex flex-col items-center justify-center mt-2 text-center'>
             <p className='text-sm font-semibold'>{review.title}</p>
             <p className='text-xs text-neutral-500'>{review.date}</p>

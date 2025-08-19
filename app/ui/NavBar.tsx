@@ -64,7 +64,7 @@ function NavBar() {
         </svg>
       </Link>
 
-      <Link href={'/reviews'}>
+      <Link href={'/filmbook'}>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 12 20'
@@ -83,7 +83,7 @@ function NavBar() {
               fontSize='2.5'
               fontWeight='600'
               fill='black'>
-              reviews
+              filmbook
             </text>
           </g>
         </svg>

@@ -11,7 +11,7 @@ export default function FeaturedReviews({ reviews }: { reviews: Review[] }) {
           picked for you (you lazy)
         </h2>
         <Link
-          href={'/reviews'}
+          href={'/filmbook'}
           className='md:text-gray-600 md:underline md:decoration-4 md:underline-offset-2 md:decoration-rose-300 md:text-md hidden md:block'>
           view more
         </Link>
@@ -21,7 +21,7 @@ export default function FeaturedReviews({ reviews }: { reviews: Review[] }) {
           (review) => review.featured && <Polaroid key={review.slug} review={review} />
         )}
         <Link
-          href={'/notebook'}
+          href={'/filmbook'}
           className='text-gray-600 underline decoration-4 underline-offset-2 decoration-rose-300 text-sm  md:hidden '>
           view more
         </Link>
