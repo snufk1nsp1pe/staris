@@ -2,9 +2,12 @@ import React from 'react'
 import { getAllPosts } from '../lib/posts'
 import FeaturedPosts from './ui/FeaturedPosts'
 import Me from './ui/Me'
+import FeaturedReviews from './ui/FeaturedReviews'
+import { getAllReviews } from '@/lib/reviews'
 
 export default async function Home() {
   const posts = getAllPosts()
+  const reviews = getAllReviews()
 
   return (
     <>
@@ -15,7 +18,7 @@ export default async function Home() {
         <div className='md:mb-30 mb-10'>
           <FeaturedPosts posts={posts} />
         </div>
-        <div>hi</div>
+        <div> <FeaturedReviews reviews={reviews}/> </div>
       </main>
     </>
   )
