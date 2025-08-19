@@ -12,26 +12,27 @@ export async function Polaroid({ review }: { review: Review }) {
     `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`,
     { next: { revalidate: 60 * 60 } }
   )
-//   if (!res.ok) throw new Error('failed to fetch wtf')
+  //   if (!res.ok) throw new Error('failed to fetch wtf')
   const data: TMDBMovie = await res.json()
-const path = type === 'backdrop_path'? data.backdrop_path : data.poster_path
+  const path = type === 'backdrop_path' ? data.backdrop_path : data.poster_path
+
   return (
     <article className='break-inside-avoid md:mt-8 mt-5'>
       <div
-        className='md:w-100 md:h-[320px] bg-[#fdfcf7]   border border-neutral-200 rounded-sm shadow-lg flex flex-col items-center p-4 cursor-pointer transition-transform hover:scale-105'
+        className='bg-[#fdfcf7] border border-neutral-200 rounded-sm shadow-lg flex flex-col items-center p-6 cursor-pointer transition-transform hover:scale-105'
         style={{ transform: `rotate(${review.degree}deg)` }}>
         <div
           className={
             type === 'poster_path'
-              ? 'w-full aspect-[2/3] relative'
+              ? 'w-full aspect-[3/4] relative h-100 '
               : 'w-full aspect-[16/9] relative'
           }>
           <Image
             src={`https://image.tmdb.org/t/p/original${path}`}
             alt={`${review.title}`}
             className='w-full h-full object-cover'
-            width={2560}
-            height={1440}
+            width={300}
+            height={450}
           />
         </div>
         <Link href={`/reviews/${review.slug}`}>

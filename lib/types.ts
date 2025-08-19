@@ -4,7 +4,7 @@ export type Author = {
   picture: string;
 };
 
-export const degrees=['3', '5', '2', '4']
+export const degrees=['3','-2','-4', '5', '2', '4']
  export const colorPalette = [
     {
       //pink
