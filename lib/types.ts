@@ -4,6 +4,7 @@ export type Author = {
   picture: string;
 };
 
+export const degrees=['3', '5', '2', '4']
  export const colorPalette = [
     {
       //pink
@@ -59,6 +60,17 @@ export type Post = {
   featured?: string;
 };
 
+export type Review = {
+  slug: string;
+  title?:string;
+  date?: string;
+  featured?: string
+  id?: string;
+  image?: string;
+  degree?: string;
+  rating?: string;
+}
+
 export type Palette={
   border: string;
   bg: string;
@@ -81,6 +93,15 @@ export type Palette={
   box2Heading: string[];
   box2Content: string[];
   stickers?: Sticker[]
+
+
+ }
+
+ export type ReviewFrontmatter={
+  title: string;
+  rating: string;
+  id: string;
+  image: string;
  }
 
  export type Sticker = {

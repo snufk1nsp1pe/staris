@@ -1,9 +1,18 @@
-export default function reviews() {
+import React from 'react'
+import { getAllReviews } from '../../lib/reviews'
+import { Polaroid } from '../ui/Polaroid'
+function page() {
+  const reviews = getAllReviews()
+   
   return (
-    <>
-      <main className='py-25 flex flex-col gap-5 mx-auto md:w-[1000px]'>
-        <h1>hi</h1>
-      </main>
-    </>
+    <div className='md:columns-2 md:gap-5 px-5'>
+      {reviews.map((review) => (
+        <Polaroid review={review} key={review.slug} />
+      ))}
+    </div>
   )
 }
+
+export default page
+
+
