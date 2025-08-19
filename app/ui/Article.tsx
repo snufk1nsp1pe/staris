@@ -11,13 +11,13 @@ export function Article({ content, frontmatter, palette }: {content: string, fro
     <>
       <article
         className={`relative md:p-5 p-3 md:leading-loose  text-gray-800 `}>
-        <header className='flex justify-between md:pb-5 pb-3 gap-2'>
+        <header className='flex flex-col justify-between md:pb-5 pb-3 gap-2'>
           <h2 className='font-semibold md:text-2xl text-xl'>
             {frontmatter.title}
           </h2>
-          <p className={` font-light md:text-sm text-xs`}>
+          <span  className={` font-light md:text-sm text-xs`}>
             <time>{frontmatter.date}</time>
-          </p>
+          </span>
         </header>
 
         <MDXRemote source={content} components={MDXComponents} />
