@@ -1,13 +1,21 @@
 // components/Polaroid.tsx
-import { Review } from '@/lib/types'
+import { Review, TMDBMovie } from '@/lib/types'
+import { error } from 'console'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-
-export function Polaroid({review}: {review: Review}) {
-    const id= review.id
-    console.log(id)
+export async function Polaroid({ review }: { review: Review }) {
+  const id = review.id
+  const api_key = 'f89dbaf591dd05cb3e5edf9076909603'
+  const type = review.image
+  const res = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`,
+    { next: { revalidate: 60 * 60 } }
+  )
+//   if (!res.ok) throw new Error('failed to fetch wtf')
+  const data: TMDBMovie = await res.json()
+const path = type === 'backdrop_path'? data.backdrop_path : data.poster_path
   return (
     <article>
       <div
@@ -15,8 +23,8 @@ export function Polaroid({review}: {review: Review}) {
         style={{ transform: `rotate(${review.degree}deg)` }}>
         <div className='w-full h-[240px] overflow-hidden'>
           <Image
-            src={'https://cdn.wallpapersafari.com/54/6/iplz07.jpg'}
-            alt={'alt'}
+            src={`https://image.tmdb.org/t/p/original${path}`}
+            alt={`${review.title}`}
             className='w-full h-full object-cover'
             width={2560}
             height={1440}

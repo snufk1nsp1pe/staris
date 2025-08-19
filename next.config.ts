@@ -13,7 +13,7 @@ const withMDX = createMDX({
 })
 module.exports = {
   images: {
-    remotePatterns: [new URL('https://cdn.wallpapersafari.com/**')],
+    remotePatterns: [new URL('https://image.tmdb.org/t/p/**')],
   },
 }
 export default withMDX(nextConfig)

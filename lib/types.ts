@@ -93,9 +93,15 @@ export type Palette={
   box2Heading: string[];
   box2Content: string[];
   stickers?: Sticker[]
-
-
  }
+
+export interface TMDBMovie {
+  backdrop_path: string | null
+  poster_path: string | null
+  title: string
+  overview: string
+  release_date: string
+}
 
  export type ReviewFrontmatter={
   title: string;
