@@ -1,6 +1,5 @@
 // components/Polaroid.tsx
 import { Review, TMDBMovie } from '@/lib/types'
-import { error } from 'console'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -17,11 +16,16 @@ export async function Polaroid({ review }: { review: Review }) {
   const data: TMDBMovie = await res.json()
 const path = type === 'backdrop_path'? data.backdrop_path : data.poster_path
   return (
-    <article>
+    <article className='break-inside-avoid md:mt-8 mt-5'>
       <div
-        className='w-100 h-[320px] bg-[#fdfcf7]   border border-neutral-200 rounded-sm shadow-lg flex flex-col items-center p-4 cursor-pointer transition-transform hover:scale-105'
+        className='md:w-100 md:h-[320px] bg-[#fdfcf7]   border border-neutral-200 rounded-sm shadow-lg flex flex-col items-center p-4 cursor-pointer transition-transform hover:scale-105'
         style={{ transform: `rotate(${review.degree}deg)` }}>
-        <div className='w-full h-[240px] overflow-hidden'>
+        <div
+          className={
+            type === 'poster_path'
+              ? 'w-full aspect-[2/3] relative'
+              : 'w-full aspect-[16/9] relative'
+          }>
           <Image
             src={`https://image.tmdb.org/t/p/original${path}`}
             alt={`${review.title}`}
