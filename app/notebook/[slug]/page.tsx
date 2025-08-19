@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation'
 
 export default async function NotePage({params}:  {params: Promise<{ slug: string }>}
 ) {
-  const { content, frontmatter, palette } = await getPostBySlug((await params).slug)
+  const { content, frontmatter } = await getPostBySlug((await params).slug)
 
   if (!content) {
     return notFound()
@@ -23,7 +23,7 @@ export default async function NotePage({params}:  {params: Promise<{ slug: strin
           </div>
         )}
         <div className={frontmatter.box1 ? '' : 'md:col-span-2'}>
-          <Article content={content} frontmatter={frontmatter} palette={palette}/>
+          <Article content={content} frontmatter={frontmatter}/>
         </div>
       </div>
   

@@ -2,8 +2,8 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { MDXComponents } from '@/lib/mdx-components'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Frontmatter, Palette } from '@/lib/types'
-export function Article({ content, frontmatter, palette }: {content: string, frontmatter: Frontmatter, palette: Palette}) {
+import { Frontmatter } from '@/lib/types'
+export function Article({ content, frontmatter}: {content: string, frontmatter: Frontmatter}) {
   // const { bg, text, border, meta } = palette
 
   const stickers = frontmatter.stickers

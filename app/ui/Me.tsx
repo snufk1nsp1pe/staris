@@ -1,4 +1,5 @@
 import Link from 'next/link'
+// import { Polaroid } from './Polaroid'
 
 export default function Me() {
   return (
@@ -31,6 +32,7 @@ export default function Me() {
       <span className='md:mt-1 md:text-md text-sm text-gray-500 italic'>
         (also yapping, rejecting society and hating on the world)
       </span>
+     
     </section>
   )
 }

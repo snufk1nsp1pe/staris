@@ -11,5 +11,9 @@ const withMDX = createMDX({
     extension: /\.(md|mdx)$/,
 
 })
-
+module.exports = {
+  images: {
+    remotePatterns: [new URL('https://cdn.wallpapersafari.com/**')],
+  },
+}
 export default withMDX(nextConfig)
