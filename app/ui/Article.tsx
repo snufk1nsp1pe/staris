@@ -4,18 +4,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Frontmatter, Palette } from '@/lib/types'
 export function Article({ content, frontmatter, palette }: {content: string, frontmatter: Frontmatter, palette: Palette}) {
-  const { bg, text, border, meta } = palette
+  // const { bg, text, border, meta } = palette
 
   const stickers = frontmatter.stickers
   return (
     <>
       <article
-        className={`relative ${border} ${bg} border-2 border-dashed rounded-2xl md:p-5 p-3 md:leading-loose leading-6 ${text} `}>
+        className={`relative md:p-5 p-3 md:leading-loose  text-gray-800 `}>
         <header className='flex justify-between md:pb-5 pb-3 gap-2'>
           <h2 className='font-semibold md:text-2xl text-xl'>
             {frontmatter.title}
           </h2>
-          <p className={`${meta} font-light md:text-sm text-xs`}>
+          <p className={` font-light md:text-sm text-xs`}>
             <time>{frontmatter.date}</time>
           </p>
         </header>
@@ -26,7 +26,7 @@ export function Article({ content, frontmatter, palette }: {content: string, fro
             <Link
               href={`/notebook/tags/${tag}`}
               key={i}
-              className={`${meta} font-semibold md:text-[16px] text-sm`}>
+              className={` font-semibold md:text-[16px] text-sm`}>
               {`#${tag} `}
             </Link>
           ))}

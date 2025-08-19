@@ -1,4 +1,4 @@
-export default function jukebox() {
+export default function reviews() {
   return (
     <>
       <main className='py-25 flex flex-col gap-5 mx-auto md:w-[1000px]'>
