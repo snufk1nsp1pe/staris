@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { colorPalette, Frontmatter, Post } from './types';
-const postsDir = path.join(process.cwd(), "posts");
+const postsDir = path.join(process.cwd(), "contents/posts");
 
 
 export function getPostSlugs() {
