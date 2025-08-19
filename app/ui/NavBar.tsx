@@ -15,7 +15,7 @@ function NavBar() {
     //     jukebox
     //   </ActiveLink>
     // </nav>
-    <nav className='absolute top-0 left-1/2 -translate-x-1/2 md:w-100 w-75 h-16 z-50 flex items-start justify-center md:gap-6 gap-1 '>
+    <nav className='absolute top-[-18px] left-1/2 -translate-x-1/2 md:w-100 w-75 h-16 z-50 flex items-start justify-center md:gap-6 gap-1 '>
       <Link href={'/'}>
         <svg
           xmlns='http://www.w3.org/2000/svg'
