@@ -6,6 +6,8 @@ import React from 'react'
 
 
 export function Polaroid({review}: {review: Review}) {
+    const id= review.id
+    console.log(id)
   return (
     <article>
       <div
