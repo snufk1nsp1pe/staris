@@ -32,7 +32,6 @@ export default function Me() {
       <span className='md:mt-1 md:text-md text-sm text-gray-500 italic'>
         (also yapping, rejecting society and hating on the world)
       </span>
-      <div className='bg-[#F7EFDA] w-100 h-100 flex items-center justify-center font-bold text-9xl'>S</div>
     </section>
   )
 }
