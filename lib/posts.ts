@@ -2,9 +2,11 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { colorPalette, Frontmatter, Post } from './types';
+
+// variables
 const postsDir = path.join(process.cwd(), "contents/posts");
 
-
+// functions for posts
 export function getPostSlugs() {
   return fs.readdirSync(postsDir);
 }

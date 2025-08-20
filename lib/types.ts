@@ -1,10 +1,8 @@
 
-export type Author = {
-  name: string;
-  picture: string;
-};
-
+// degrees for polaroid rotation
 export const degrees=['3','-2','-4', '5', '2', '4']
+
+// colors for MiniArticles
  export const colorPalette = [
     {
       //pink
@@ -43,6 +41,8 @@ export const degrees=['3','-2','-4', '5', '2', '4']
     },
   ]
 
+
+// for posts
 export type Post = {
   slug: string;
   title?: string;
@@ -60,6 +60,39 @@ export type Post = {
   featured?: string;
 };
 
+export type Palette={
+  border: string;
+  bg: string;
+  text: string;
+  meta: string;
+} 
+
+ export type Frontmatter={
+  title: string;
+  date: string;
+  tags: string[];
+  tagline: string;
+  featured?: boolean;
+  boxes?: boolean;
+  box1: string;
+  box1Heading: string[];
+  box1Content: string[];
+  box2: string;
+  box2Heading: string[];
+  box2Content: string[];
+  stickers?: Sticker[]
+ }
+
+  export type Sticker = {
+  src: string;
+  x: number;
+  y: number;
+  size: number;
+};
+
+
+
+ // for reviews
 export type Review = {
   slug: string;
   title?:string;
@@ -71,30 +104,6 @@ export type Review = {
   rating?: string;
   spoiler?: boolean;
 }
-
-export type Palette={
-  border: string;
-  bg: string;
-  text: string;
-  meta: string;
-}
- export type Frontmatter={
-  title: string;
-  date: string;
-  tags: string[];
-  tagline: string;
-  // Optional properties for layouts
-  featured?: boolean;
-  // Optional properties for boxes
-  boxes?: boolean;
-  box1: string;
-  box1Heading: string[];
-  box1Content: string[];
-  box2: string;
-  box2Heading: string[];
-  box2Content: string[];
-  stickers?: Sticker[]
- }
 
 export interface TMDBMovie {
   backdrop_path: string | null
@@ -112,12 +121,8 @@ export interface TMDBMovie {
   spoiler: boolean;
  }
 
- export type Sticker = {
-  src: string;
-  x: number;
-  y: number;
-  size: number;
-};
+
+ // for navbar
 export type ActiveLinkProps = {
   href: string;
   children: React.ReactNode;

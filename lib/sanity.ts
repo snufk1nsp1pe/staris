@@ -6,3 +6,4 @@ export const client = createClient({
   apiVersion: "2023-01-01",
   useCdn: true,
 });
+// no longer used but saved for future use

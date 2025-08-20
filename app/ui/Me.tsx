@@ -1,7 +1,4 @@
-
 import Link from 'next/link'
-// import Gsap from './Gsap'
-// import { Polaroid } from './Polaroid'
 
 export default function Me() {
  

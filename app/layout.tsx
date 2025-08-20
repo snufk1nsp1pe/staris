@@ -15,12 +15,12 @@ import NavBar from "./ui/NavBar";
   // });
 
   const gloria = Gloria_Hallelujah({
-    weight: '400', // only one weight is available
+    weight: '400',
     subsets: ['latin'],
   })
 
 export const metadata: Metadata = {
-  title: "staris",
+  title: "Staris",
   description: "A personal blog by Serine",
   icons: {
     icon: '/favicon.ico'

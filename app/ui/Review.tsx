@@ -9,14 +9,13 @@ export function Review({
   content: string
   frontmatter: ReviewFrontmatter
 }) {
-  // const { bg, text, border, meta } = palette
 
   return (
     <>
       {frontmatter.spoiler && (
         <span className='flex gap-2 py-0 my-0 text-red-500  '>
           <FlagTriangleRight className='fill-red-500 rotate-[-20deg]' />
-          <span> spoiler alert</span>
+          <span>spoiler alert</span>
         </span>
       )}
 

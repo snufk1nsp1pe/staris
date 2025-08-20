@@ -1,4 +1,3 @@
-// components/Polaroid.tsx
 import { Review, TMDBMovie } from '@/lib/types'
 import Image from 'next/image'
 import Link from 'next/link'
