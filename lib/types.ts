@@ -69,6 +69,7 @@ export type Review = {
   image?: string;
   degree?: string;
   rating?: string;
+  spoiler?: boolean;
 }
 
 export type Palette={
@@ -108,6 +109,7 @@ export interface TMDBMovie {
   rating: string;
   id: string;
   image: string;
+  spoiler: boolean;
  }
 
  export type Sticker = {
