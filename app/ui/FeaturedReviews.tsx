@@ -16,13 +16,13 @@ export default function FeaturedReviews({ reviews }: { reviews: Review[] }) {
           view more
         </Link>
       </div>
-      <div className='md:columns-2 md:gap-8'>
+      <div className='md:columns-2 md:gap-8 px-8'>
         {reviews.map(
           (review) => review.featured && <Polaroid key={review.slug} review={review} />
         )}
         <Link
           href={'/filmbook'}
-          className='text-gray-600 underline decoration-4 underline-offset-2 decoration-rose-300 text-sm  md:hidden '>
+          className='text-gray-600 underline decoration-4 underline-offset-2 decoration-rose-300 text-sm  md:hidden px-0 '>
           view more
         </Link>
       </div>

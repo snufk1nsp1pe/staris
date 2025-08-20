@@ -13,12 +13,15 @@ export default async function Home() {
     <>
       <main className='px-5 md:mb-30 md:mt-50 mt-40 flex flex-col md:gap-3 md:mx-auto md:w-[1000px]'>
         <div className='md:mb-30 mb-14'>
-          <Me/>
+          <Me />
         </div>
         <div className='md:mb-30 mb-10'>
           <FeaturedPosts posts={posts} />
         </div>
-        <div> <FeaturedReviews reviews={reviews}/> </div>
+        <div className='md:mb-30 mb-10'>
+          {' '}
+          <FeaturedReviews reviews={reviews} />{' '}
+        </div>
       </main>
     </>
   )
