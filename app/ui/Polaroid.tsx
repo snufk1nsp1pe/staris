@@ -19,7 +19,7 @@ export async function Polaroid({ review }: { review: Review }) {
   return (
     <article className='break-inside-avoid md:mt-8 mt-5'>
       <div
-        className='bg-[#fdfcf7] border border-neutral-200 rounded-sm shadow-lg flex flex-col items-center p-6 cursor-pointer transition-transform hover:scale-105'
+        className='bg-[#fdfcf7] border border-neutral-200 rounded-sm shadow-lg flex flex-col items-center p-6 cursor-pointer transition-transform hover:scale-101'
         style={{ transform: `rotate(${review.degree}deg)` }}>
         <div
           className={
