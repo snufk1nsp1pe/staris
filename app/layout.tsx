@@ -20,7 +20,7 @@ import NavBar from "./ui/NavBar";
   })
 
 export const metadata: Metadata = {
-  title: "blog",
+  title: "Notebook",
   description: "A personal blog by Serine",
 };
 
