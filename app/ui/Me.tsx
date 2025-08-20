@@ -1,7 +1,10 @@
+
 import Link from 'next/link'
+// import Gsap from './Gsap'
 // import { Polaroid } from './Polaroid'
 
 export default function Me() {
+ 
   return (
     <section className='flex flex-col items-center justify-center text-center '>
       <h1 className='md:text-5xl text-3xl font-bold tracking-tight text-gray-800'>

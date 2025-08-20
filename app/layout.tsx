@@ -20,7 +20,7 @@ import NavBar from "./ui/NavBar";
   })
 
 export const metadata: Metadata = {
-  title: "Notebook",
+  title: "staris",
   description: "A personal blog by Serine",
   icons: {
     icon: '/favicon.ico'
