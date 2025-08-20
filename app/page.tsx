@@ -4,6 +4,7 @@ import FeaturedPosts from './ui/FeaturedPosts'
 import Me from './ui/Me'
 import FeaturedReviews from './ui/FeaturedReviews'
 import { getAllReviews } from '@/lib/reviews'
+import Image from 'next/image'
 
 export default async function Home() {
   const posts = getAllPosts()
@@ -22,6 +23,12 @@ export default async function Home() {
           {' '}
           <FeaturedReviews reviews={reviews} />{' '}
         </div>
+        <Image
+          src={'/star.png'}
+          width={100}
+          height={100}
+          alt=''
+          className='absolute md:top-65 md:right-130 top-65 right-8  stroke-amber-300'></Image>
       </main>
     </>
   )
