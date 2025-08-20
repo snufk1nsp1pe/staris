@@ -22,6 +22,9 @@ import NavBar from "./ui/NavBar";
 export const metadata: Metadata = {
   title: "Notebook",
   description: "A personal blog by Serine",
+  icons: {
+    icon: '/favicon.ico'
+  }
 };
 
 export default function RootLayout({
