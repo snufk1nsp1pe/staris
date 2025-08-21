@@ -9,9 +9,9 @@ export default function AnimatedArticle({
 }) {
   return (
     <motion.div
-      initial={{ y: 300 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.1, ease: 'linear', delay: 0 }}>
+      initial={{ opacity: 0, y: 300 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, ease: 'linear', delay: 0 }}>
       {children}
     </motion.div>
   )
