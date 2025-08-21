@@ -14,11 +14,11 @@ function page() {
         </AnimatedArticle>
       ))}
       <Image
-        src={'/daisies.png'}
+        src={'/purple-flower-cat.png'}
         width={200}
         height={200}
         alt=''
-        className='md:block hidden absolute md:top-[-100px] md:right-[-150px] w-32 h-32 md:w-48 md:h-48 '
+        className='md:block hidden absolute md:top-[-100px] md:right-[-150px] w-32 h-32 md:w-40 md:h-40 '
       />
     </div>
   )
