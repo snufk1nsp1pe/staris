@@ -36,13 +36,8 @@ export default async function Home() {
           alt=''
           className='md:block hidden absolute md:top-20 md:right-20 rotate-[20deg] '
         /> */}
-        <Image
-          src={'/bouquet.png'}
-          width={200}
-          height={200}
-          alt=''
-          className='md:block hidden absolute md:top-50 md:left-20 rotate-[20deg] '
-        />
+
+      
         {/* <Image
           src={'/butterfly.png'}
           width={80}

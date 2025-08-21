@@ -1,9 +1,9 @@
 import Link from 'next/link'
-
+import Image from 'next/image'
 export default function Me() {
  
   return (
-    <section className='flex flex-col items-center justify-center text-center '>
+    <section className='relative flex flex-col items-center justify-center text-center '>
       <h1 className='md:text-5xl text-3xl font-bold tracking-tight text-gray-800'>
         hello there, this is{'  '}
         <Link
@@ -32,6 +32,13 @@ export default function Me() {
       <span className='md:mt-1 md:text-md text-sm text-gray-500 italic'>
         (also yapping, rejecting society and hating on the world)
       </span>
+      <Image
+        src={'/heart-cat.png'}
+        width={200}
+        height={200}
+        alt=''
+        className='md:block hidden absolute md:top-0 md:right-0  rotate-[20deg] w-32 h-32 md:w-48 md:h-48 '
+      />
     </section>
   )
 }
