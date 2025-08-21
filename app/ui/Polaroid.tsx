@@ -18,33 +18,31 @@ export async function Polaroid({ review }: { review: Review }) {
 
   return (
     <article className='break-inside-avoid md:mt-8 mt-5'>
-      <div
-        className='bg-[#fdfcf7] border border-neutral-200 rounded-sm shadow-lg flex flex-col items-center p-4 cursor-pointer transition-transform hover:scale-101'
-        style={{ transform: `rotate(${review.degree}deg)` }}>
+      <Link href={`/filmbook/${review.slug}`}>
         <div
-          className={
-            type === 'poster_path'
-              ? 'w-full aspect-[3/4] relative h-100 '
-              : 'w-full aspect-[16/9] relative'
-          }>
-          <Image
-            src={`https://image.tmdb.org/t/p/original${path}`}
-            alt={`${review.title}`}
-            className='w-full h-full object-cover'
-            width={300}
-            height={450}
-          />
-        </div>
-        <Link href={`/filmbook/${review.slug}`}>
+          className='bg-[#fdfcf7] border border-neutral-200 rounded-sm shadow-lg flex flex-col items-center p-4 cursor-pointer transition-transform hover:scale-101'
+          style={{ transform: `rotate(${review.degree}deg)` }}>
+          <div
+            className={
+              type === 'poster_path'
+                ? 'w-full aspect-[3/4] relative h-100 '
+                : 'w-full aspect-[16/9] relative'
+            }>
+            <Image
+              src={`https://image.tmdb.org/t/p/original${path}`}
+              alt={`${review.title}`}
+              className='w-full h-full object-cover'
+              width={300}
+              height={450}
+            />
+          </div>
           <div className='w-full flex flex-col items-center justify-center mt-2 text-center'>
             <p className='text-sm font-semibold capitalize'>{`${review.title} (${year})`}</p>
             <p className='text-sm text-neutral-500'>{`reviewed on ${review.date}`}</p>
-            <p className=' font-medium text-yellow-600'>
-              ★ {review.rating}/10
-            </p>
+            <p className=' font-medium text-yellow-600'>★ {review.rating}/10</p>
           </div>
-        </Link>
-      </div>
+        </div>
+      </Link>
     </article>
   )
 }
