@@ -33,6 +33,7 @@ export default function Me() {
         (also yapping, rejecting society and hating on the world)
       </span>
       <Image
+        priority={false}
         src={'/heart-cat.png'}
         width={200}
         height={200}
