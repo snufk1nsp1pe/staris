@@ -7,7 +7,7 @@ export default function AnimatedMe({ children }: { children: React.ReactNode }) 
     <motion.div
       initial={{ x: 900 }} 
       animate={{ x: 0 }} 
-      transition={{ duration: 0.05, ease: 'linear' }}>
+      transition={{ duration: 0.1, ease: 'linear' }}>
       {children}
     </motion.div>
   )

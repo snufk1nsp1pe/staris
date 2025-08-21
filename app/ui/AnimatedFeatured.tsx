@@ -7,7 +7,7 @@ export default function AnimatedFeatured({ children }: { children: React.ReactNo
     <motion.div
       initial={{ y: -300 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.05, ease: 'linear', delay: 0 }}>
+      transition={{ duration: 0.1, ease: 'linear', delay: 0 }}>
       {children}
     </motion.div>
   )
