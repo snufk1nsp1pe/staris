@@ -37,9 +37,9 @@ export async function Polaroid({ review }: { review: Review }) {
             />
           </div>
           <div className='w-full flex flex-col items-center justify-center mt-2 text-center'>
-            <p className='text-sm font-semibold capitalize'>{`${review.title} (${year})`}</p>
-            <p className='text-sm text-neutral-500'>{`reviewed on ${review.date}`}</p>
-            <p className=' font-medium text-yellow-600'>★ {review.rating}/10</p>
+            <span className='text-sm font-semibold capitalize'>{`${review.title} (${year})`}</span>
+            <span className='text-sm text-neutral-500'>{`reviewed on ${review.date}`}</span>
+            <span className=' font-medium text-yellow-600'>★ {review.rating}/10</span>
           </div>
         </div>
       </Link>
