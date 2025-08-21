@@ -4,7 +4,6 @@ import FeaturedPosts from './ui/FeaturedPosts'
 import Me from './ui/Me'
 import FeaturedReviews from './ui/FeaturedReviews'
 import { getAllReviews } from '@/lib/reviews'
-import Image from 'next/image'
 export default async function Home() {
   const posts = getAllPosts()
   const reviews = getAllReviews()
