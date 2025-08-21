@@ -2,13 +2,16 @@ import React from 'react'
 import { getAllPosts } from '../../lib/posts'
 import MiniArticle from '../ui/MiniArticle'
 import Image from 'next/image'
+import AnimatedArticle from '../ui/AnimatedArticle'
 function page() {
   const posts = getAllPosts()
 
   return (
     <div className='relative md:columns-2 md:gap-5 px-5'>
       {posts.map((post) => (
-        <MiniArticle post={post} key={post.slug} />
+        <AnimatedArticle key={post.slug}>
+          <MiniArticle post={post} key={post.slug} />
+        </AnimatedArticle>
       ))}
       <Image
         src={'/daisies.png'}

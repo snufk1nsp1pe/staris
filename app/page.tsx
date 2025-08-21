@@ -4,6 +4,8 @@ import FeaturedPosts from './ui/FeaturedPosts'
 import Me from './ui/Me'
 import FeaturedReviews from './ui/FeaturedReviews'
 import { getAllReviews } from '@/lib/reviews'
+import AnimatedMe from './ui/AnimatedMe'
+import AnimatedFeatured from './ui/AnimatedFeatured'
 export default async function Home() {
   const posts = getAllPosts()
   const reviews = getAllReviews()
@@ -12,14 +14,19 @@ export default async function Home() {
     <>
       <main className='px-5 md:mb-30 md:mt-50 mt-40 flex flex-col md:gap-3 md:mx-auto md:w-[1000px]'>
         <div className='md:mb-30 mb-14'>
-          <Me />
+          <AnimatedMe>
+            <Me />
+          </AnimatedMe>
         </div>
         <div className='md:mb-30 mb-10'>
-          <FeaturedPosts posts={posts} />
+          <AnimatedFeatured>
+            <FeaturedPosts posts={posts} />
+          </AnimatedFeatured>
         </div>
         <div className='md:mb-30 mb-10'>
-          {' '}
-          <FeaturedReviews reviews={reviews} />{' '}
+          <AnimatedFeatured>
+            <FeaturedReviews reviews={reviews} />
+          </AnimatedFeatured>
         </div>
         {/* <Image
           src={'/star.png'}
@@ -36,7 +43,6 @@ export default async function Home() {
           className='md:block hidden absolute md:top-20 md:right-20 rotate-[20deg] '
         /> */}
 
-      
         {/* <Image
           src={'/butterfly.png'}
           width={80}
