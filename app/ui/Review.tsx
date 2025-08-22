@@ -1,7 +1,8 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { MDXComponents } from '@/lib/mdx-components'
-import { ReviewFrontmatter, TMDBMovie } from '@/lib/types'
+import { ReviewFrontmatter } from '@/lib/types'
 import { FlagTriangleRight, Star } from 'lucide-react'
+import Fetch from '@/lib/fetch'
 // import { p } from 'framer-motion/client'
 export async function Review({
   content,
@@ -10,18 +11,7 @@ export async function Review({
   content: string
   frontmatter: ReviewFrontmatter
 }) {
-  const api_key = process.env.TMDB_API_KEY
-  const id = frontmatter.link
-    .split('https://www.themoviedb.org/movie/')[1]
-    .split('-')[0]
-  const res = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`,
-    { next: { revalidate: 60 * 60 } }
-  )
-  const data: TMDBMovie = await res.json()
-  console.log(data)
-  const title = data.title
-  console.log(title)
+  const title = (await Fetch({ frontmatter: frontmatter })).title
 
   return (
     <>

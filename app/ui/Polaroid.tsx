@@ -1,25 +1,14 @@
-import { Review, TMDBMovie } from '@/lib/types'
+import { Review } from '@/lib/types'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import Fetch from '@/lib/fetch'
 
 export async function Polaroid({ review }: { review: Review }) {
-  
-  const api_key = process.env.TMDB_API_KEY
   const type = review.image
-  const id = review.link
-    .split('https://www.themoviedb.org/movie/')[1]
-    .split('-')[0]
-  const res = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`,
-    { next: { revalidate: 60 * 60 } }
-  )
-  const data: TMDBMovie = await res.json()
-  console.log(data)
-  const path = type === 'backdrop' ? data.backdrop_path : data.poster_path
-  const year = data.release_date.split('-')[0]
-  const title = data.title
-  console.log(title)
+  const path = (await Fetch({ review: review })).path
+  const year = (await Fetch({ review: review })).year
+  const title = (await Fetch({ review: review })).title
 
   return (
     <article className='break-inside-avoid md:mt-8 mt-5'>
