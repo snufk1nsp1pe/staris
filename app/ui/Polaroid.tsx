@@ -4,17 +4,22 @@ import Link from 'next/link'
 import React from 'react'
 
 export async function Polaroid({ review }: { review: Review }) {
-  const id = review.id
-  const api_key = 'f89dbaf591dd05cb3e5edf9076909603'
+  
+  const api_key = process.env.TMDB_API_KEY
   const type = review.image
+  const id = review.link
+    .split('https://www.themoviedb.org/movie/')[1]
+    .split('-')[0]
   const res = await fetch(
     `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`,
     { next: { revalidate: 60 * 60 } }
   )
-  //   if (!res.ok) throw new Error('failed to fetch wtf')
   const data: TMDBMovie = await res.json()
+  console.log(data)
   const path = type === 'backdrop' ? data.backdrop_path : data.poster_path
   const year = data.release_date.split('-')[0]
+  const title = data.title
+  console.log(title)
 
   return (
     <article className='break-inside-avoid md:mt-8 mt-5'>
@@ -30,16 +35,18 @@ export async function Polaroid({ review }: { review: Review }) {
             }>
             <Image
               src={`https://image.tmdb.org/t/p/original${path}`}
-              alt={`${review.title}`}
+              alt={`${title}`}
               className='w-full h-full object-cover'
               width={300}
               height={450}
             />
           </div>
           <div className='w-full flex flex-col items-center justify-center mt-2 text-center'>
-            <span className='text-sm font-semibold capitalize'>{`${review.title} (${year})`}</span>
+            <span className='text-sm font-semibold capitalize'>{`${title} (${year})`}</span>
             <span className='text-sm text-neutral-500'>{`reviewed on ${review.date}`}</span>
-            <span className=' font-medium text-yellow-600'>★ {review.rating}/10</span>
+            <span className=' font-medium text-yellow-600'>
+              ★ {review.rating}/10
+            </span>
           </div>
         </div>
       </Link>

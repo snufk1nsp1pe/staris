@@ -1,15 +1,27 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { MDXComponents } from '@/lib/mdx-components'
-import { ReviewFrontmatter } from '@/lib/types'
+import { ReviewFrontmatter, TMDBMovie } from '@/lib/types'
 import { FlagTriangleRight, Star } from 'lucide-react'
-import { p } from 'framer-motion/client'
-export function Review({
+// import { p } from 'framer-motion/client'
+export async function Review({
   content,
   frontmatter,
 }: {
   content: string
   frontmatter: ReviewFrontmatter
 }) {
+  const api_key = process.env.TMDB_API_KEY
+  const id = frontmatter.link
+    .split('https://www.themoviedb.org/movie/')[1]
+    .split('-')[0]
+  const res = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`,
+    { next: { revalidate: 60 * 60 } }
+  )
+  const data: TMDBMovie = await res.json()
+  console.log(data)
+  const title = data.title
+  console.log(title)
 
   return (
     <>
@@ -32,7 +44,7 @@ export function Review({
           <h2 className='font-semibold md:text-2xl text-xl'>
             my review of{' '}
             <span className='underline capitalize decoration-wavy underline-offset-4 decoration-3 decoration-purple-300'>
-              {frontmatter.title}
+              {title}
             </span>
           </h2>
           <span className={` font-bold  text-amber-500`}>

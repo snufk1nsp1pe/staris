@@ -95,10 +95,11 @@ export type Palette={
  // for reviews
 export type Review = {
   slug: string;
-  title?:string;
+  link: string;
+  // title?:string;
   date?: string;
   featured?: boolean
-  id?: string;
+  // id?: string;
   image?: string;
   degree?: string;
   rating?: string;
@@ -114,9 +115,10 @@ export interface TMDBMovie {
 }
 
  export type ReviewFrontmatter={
-  title: string;
+  // title: string;
   rating: string;
-  id: string;
+  // id: string;
+  link: string;
   image: string;
   spoiler: boolean;
  }
