@@ -97,7 +97,7 @@ export type Review = {
   slug: string;
   title?:string;
   date?: string;
-  featured?: string
+  featured?: boolean
   id?: string;
   image?: string;
   degree?: string;
