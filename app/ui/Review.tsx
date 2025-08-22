@@ -2,6 +2,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { MDXComponents } from '@/lib/mdx-components'
 import { ReviewFrontmatter } from '@/lib/types'
 import { FlagTriangleRight, Star } from 'lucide-react'
+import { p } from 'framer-motion/client'
 export function Review({
   content,
   frontmatter,
@@ -16,6 +17,12 @@ export function Review({
         <span className='flex gap-2 py-0 my-0 text-red-500 decoration-double underline decoration-2'>
           <FlagTriangleRight className='fill-red-500 rotate-[-20deg]' />
           <span>spoiler alert</span>
+        </span>
+      )}
+      {!frontmatter.spoiler && (
+        <span className='flex gap-2 py-0 my-0 text-green-500 decoration-double underline decoration-2'>
+          <FlagTriangleRight className='fill-green-500 rotate-[-20deg]' />
+          <span>spoiler free</span>
         </span>
       )}
 
