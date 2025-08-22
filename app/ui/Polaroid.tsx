@@ -13,7 +13,7 @@ export async function Polaroid({ review }: { review: Review }) {
   )
   //   if (!res.ok) throw new Error('failed to fetch wtf')
   const data: TMDBMovie = await res.json()
-  const path = type === 'backdrop_path' ? data.backdrop_path : data.poster_path
+  const path = type === 'backdrop' ? data.backdrop_path : data.poster_path
   const year = data.release_date.split('-')[0]
 
   return (
@@ -24,7 +24,7 @@ export async function Polaroid({ review }: { review: Review }) {
           style={{ transform: `rotate(${review.degree}deg)` }}>
           <div
             className={
-              type === 'poster_path'
+              type === 'poster'
                 ? 'w-full aspect-[3/4] relative h-100 '
                 : 'w-full aspect-[16/9] relative'
             }>
