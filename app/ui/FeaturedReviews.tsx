@@ -13,7 +13,7 @@ export default function FeaturedReviews({ reviews }: { reviews: Review[] }) {
         <Link
           href={'/filmbook'}
           className='md:text-gray-600 md:underline md:decoration-4 md:underline-offset-2 md:decoration-rose-300 md:text-md hidden md:block'>
-          view more
+          (re)view more
         </Link>
       </div>
       <div className='md:columns-2 md:gap-8 px-8'>
@@ -23,7 +23,7 @@ export default function FeaturedReviews({ reviews }: { reviews: Review[] }) {
         <Link
           href={'/filmbook'}
           className='text-gray-600 underline decoration-4 underline-offset-2 decoration-rose-300 text-sm  md:hidden px-0 '>
-          view more
+          (re)view more
         </Link>
       </div>
     </>
