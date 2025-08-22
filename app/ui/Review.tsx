@@ -24,7 +24,7 @@ export function Review({
         <header className='flex flex-col justify-between md:pb-5 pb-3 gap-4'>
           <h2 className='font-semibold md:text-2xl text-xl'>
             my review of{' '}
-            <span className='underline decoration-wavy underline-offset-4 decoration-3 decoration-purple-300'>
+            <span className='underline capitalize decoration-wavy underline-offset-4 decoration-3 decoration-purple-300'>
               {frontmatter.title}
             </span>
           </h2>
