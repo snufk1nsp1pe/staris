@@ -6,10 +6,10 @@ import Fetch from '@/lib/fetch'
 
 export async function Polaroid({ review }: { review: Review }) {
   const type = review.image
-  const path = (await Fetch({ review: review })).path
-  const year = (await Fetch({ review: review })).year
-  const title = (await Fetch({ review: review })).title
-
+  // const path = (await Fetch({ review: review })).path
+  // const year = (await Fetch({ review: review })).year
+  // const title = (await Fetch({ review: review })).title
+const { path, year, title } = await Fetch({ review: review })
   return (
     <article className='break-inside-avoid md:mt-8 mt-5'>
       <Link href={`/filmbook/${review.slug}`}>
