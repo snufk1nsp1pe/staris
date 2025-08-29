@@ -15,12 +15,17 @@ export function Article({ content, frontmatter}: {content: string, frontmatter: 
           <h2 className='font-semibold md:text-2xl text-xl'>
             {frontmatter.title}
           </h2>
-          <span className={` font-light md:text-sm text-xs`}>
-            <time>{frontmatter.date}</time>
-          </span>
-          <span className={` font-light md:text-sm text-xs`}>
-            {frontmatter.author}
-          </span>
+          <div className='text-gray-600 flex flex-col'>
+            <span className={` font-light md:text-sm text-xs`}>
+              <time>{frontmatter.date}</time>
+            </span>
+            <span className={` font-light md:text-sm text-xs`}>
+              By: {frontmatter.author}
+            </span>
+            <span className={` font-light md:text-sm text-xs`}>
+              State: {frontmatter.state}
+            </span>
+          </div>
         </header>
 
         <MDXRemote source={content} components={MDXComponents} />
