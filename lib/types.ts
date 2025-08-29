@@ -46,6 +46,7 @@ export const degrees=['3','-2','-4', '5', '2', '4']
 export type Post = {
   slug: string;
   title?: string;
+  author?: string
   date?: string;
   tagline?: string;
   tags?: string[];
@@ -69,6 +70,7 @@ export type Palette={
 
  export type Frontmatter={
   title: string;
+  author: string
   date: string;
   tags: string[];
   tagline: string;
