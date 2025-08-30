@@ -3,6 +3,7 @@ import { MDXComponents } from '@/lib/mdx-components'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Frontmatter } from '@/lib/types'
+import { CalendarFold, PencilLine, NotebookPen } from 'lucide-react'
 export function Article({ content, frontmatter}: {content: string, frontmatter: Frontmatter}) {
   // const { bg, text, border, meta } = palette
 
@@ -15,15 +16,18 @@ export function Article({ content, frontmatter}: {content: string, frontmatter: 
           <h2 className='font-semibold md:text-2xl text-xl'>
             {frontmatter.title}
           </h2>
-          <div className='text-gray-600 flex flex-col'>
-            <span className={` font-light md:text-sm text-xs`}>
-              <time>{frontmatter.date}</time>
+          <div className='text-gray-600 flex flex-col mt-2'>
+            <span className={` font-light md:text-sm text-xs `}>
+              <CalendarFold className='inline-block ' width={20} height={20} />
+              <time className='pl-3'>{frontmatter.date}</time>
             </span>
-            <span className={` font-light md:text-sm text-xs`}>
-              By: {frontmatter.author}
+            <span className={` font-light md:text-sm text-xs mt-2`}>
+              <PencilLine className='inline-block' width={20} height={20} />
+              <span className='pl-3'>{frontmatter.author}</span>
             </span>
-            <span className={` font-light md:text-sm text-xs`}>
-              State: {frontmatter.state}
+            <span className={` font-light md:text-sm text-xs mt-2`}>
+              <NotebookPen className='inline-block' width={20} height={20} />
+              <span className='pl-3'>{frontmatter.state}</span>
             </span>
           </div>
         </header>
