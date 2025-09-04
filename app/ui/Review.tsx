@@ -34,7 +34,9 @@ export async function Review({
           <h2 className='font-semibold md:text-2xl text-xl'>
             my review of{' '}
             <span className='underline capitalize decoration-wavy underline-offset-4 decoration-3 decoration-purple-300'>
-              {title}
+              <a href={`${frontmatter.link}`} target='_blank'>
+                {title}
+              </a>
             </span>
           </h2>
           <span className={` font-bold  text-amber-500`}>
