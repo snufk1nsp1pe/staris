@@ -20,7 +20,7 @@ export default function Me() {
           className='underline decoration-rose-300 underline-offset-2 decoration-4 '>
           movies
         </Link>
-        , music , books &{' '}
+        , music, books &{' '}
         <Link
           href={'/notebook'}
           className='underline decoration-rose-300 underline-offset-2 decoration-4'>
